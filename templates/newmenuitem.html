@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1> New Menu Item </h1>
+
+<form action="{{url_for('new_menu_item', restaurant_id=restaurant_id )}}" method='POST'>
+
+    <label>Name:</label>
+    <input type='text' size='30' name='name'><br/><br/>
+    <label>Price:</label>
+    <input type='text' size='30' name='price'><br/><br/>
+    <label>Description:</label>
+    <textarea cols='30' name='description'></textarea><br/><br/>
+
+    <fieldset>
+        <legend>Course</legend>
+        <input type="radio" id="course1" name="course" value="Appetizer"/>
+        <label for="course1">Appetizer</label><br/>
+        <input type="radio" id="course2" name="course" value="Entree"/>
+        <label for="course2">Entree</label><br/>
+        <input type="radio" id="course3" name="course" value="Dessert"/>
+        <label for="course3">Dessert</label><br/>
+        <input type="radio" id="course4" name="course" value="Beverage"/>
+        <label for="course4">Beverage</label><br/>
+
+    </fieldset>
+
+    <input type='submit' value='Create'>
+
+</form>
+</body>
+</html>
